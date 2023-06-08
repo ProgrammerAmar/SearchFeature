@@ -2887,21 +2887,6 @@ font-size: 13px;
 background-color:#79249C;
 color: #fff;
 }
-.content{
-background-color: #fff;
-display:none;
-}
-.content p{
-padding: 10px 15px;
-margin: 0;
-color: #444;
-    line-height: 1.7;
-}
-  .content *
-  {
-        color: #444;
-    line-height: 1.7;
-  }
   .content ol
   {
     margin-top:0px;
