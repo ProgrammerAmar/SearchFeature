@@ -17,9 +17,11 @@ $(function () {
                 $(".steps ul").removeClass("step-3");
             }
             if (newIndex === 3) {
+            
                 $(".steps ul").addClass("step-4");
                 $(".actions ul").addClass("step-last");
             } else {
+                
                 $(".steps ul").removeClass("step-4");
                 $(".actions ul").removeClass("step-last");
             }

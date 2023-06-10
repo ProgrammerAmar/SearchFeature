@@ -179,11 +179,23 @@
 
           <div class="banner-search-bar search_page_result">
             <h4>What is the main symptom you are experiencing?</h4>
-            <div role="search" id="search_services" class="search-services hero-form-for-desk">
+            <div role="search" id="search_services" class="search-services hero-form-for-desk mb-0">
 
               <div class="input-field mb-4">
                 <input name="q" type="search" id="search-text" placeholder="Search symptom list">
               </div>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+              <label class="form-check-label" for="flexRadioDefault1">
+                Solution
+              </label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+              <label class="form-check-label" for="flexRadioDefault2">
+                Information
+              </label>
             </div>
             <h5 class="mt-4 d-none no_found">No results found!</h5>
             <div class="product-listing mt-4 d-none" id="final_records">
@@ -1008,22 +1020,7 @@
                               NO
                             </label>
                           </div>
-                          <div>
-                            <h5>Pain caused by injury</h5>
-                            Was the joint pain caused by an injury?
-                              <div class="form-check">
-                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-                                <label class="form-check-label" for="exampleRadios1">
-                                  Yes
-                                </label>
-                              </div>
-                              <div class="form-check">
-                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-                                <label class="form-check-label" for="exampleRadios2">
-                                  NO
-                                </label>
-                              </div>
-                          </div>
+                          
                         </div>
                       </div>
                     </section>
@@ -1395,7 +1392,7 @@
         let search_val = $(this).val();
         if (search_val) {
           let filtered = symptoms.filter(function (item, index) {
-            if (item.name.includes(search_val)) {
+            if (item.name.toLowerCase().includes(search_val.toLowerCase())) {
               return item.name
             }
           })
@@ -1439,6 +1436,10 @@
           let symptom_name = $(this).data('name');
           $('#modal_heading').text(`${symptom_name} symptom checker`)
           $('#myModal').modal('show')
+        });
+
+        $('a[href="#finish"]').on('click', function(){
+          location.reload();
         });
       })
     })
